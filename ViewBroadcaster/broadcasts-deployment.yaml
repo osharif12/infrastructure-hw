@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: view-broadcasts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: view-broadcasts
+  template:
+    metadata:
+      labels:
+        app: view-broadcasts
+    spec:
+      containers:
+        - name: view-broadcasts
+          image: view-broadcasts:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

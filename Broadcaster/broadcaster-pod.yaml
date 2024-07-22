@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: broadcaster
+spec:
+  containers:
+  - name: broadcaster
+    image: broadcaster:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8081
